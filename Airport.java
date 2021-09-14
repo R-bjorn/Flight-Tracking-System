@@ -26,4 +26,19 @@ public class Airport {
     public void addLanding(String flight_number) {
         landing.add(flight_number);
     }
+
+    // For performing the next action
+    public String handleNextAction() {
+        if (landing.size() > 0) {
+            String flight = landing.remove();
+            landed.add(flight);
+            return "Flight " + flight + " is landing.";
+        } else if (takeOff.size() > 0) {
+            String flight = takeOff.remove();
+            takenOff.add(flight);
+            return "Flight " + flight + " is taking off.";
+        } else {
+            return "No plane is waiting to land of take-off";
+        }
+    }
 }
