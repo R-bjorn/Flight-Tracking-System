@@ -41,4 +41,28 @@ public class Airport {
             return "No plane is waiting to land of take-off";
         }
     }
+
+    // For print the planes waiting for landing/take-off.
+    public String waitingPlanes() {
+        StringBuilder waitingPlanes = new StringBuilder();
+        if (landing.size() > 0) {
+            waitingPlanes.append("Planes waiting for landing\n");
+            waitingPlanes.append("---------------------------\n");
+            for (String flight : landed) {
+                waitingPlanes.append(flight);
+            }
+            waitingPlanes.append("\n");
+            return waitingPlanes.toString();
+        }
+        if (takeOff.size() > 0) {
+            waitingPlanes.append("Planes waiting for take-off\n");
+            waitingPlanes.append("---------------------------\n");
+            for (String flight : takeOff) {
+                waitingPlanes.append(flight);
+            }
+            waitingPlanes.append("\n");
+            return waitingPlanes.toString();
+        }
+        return "No plane is in the landing and take-off queues.";
+    }
 }
