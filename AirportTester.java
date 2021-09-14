@@ -32,9 +32,11 @@ public class AirportTester {
                 System.out.println(simulator.handleNextAction());
             } else if (action.equals("p")) {
                 System.out.println(simulator.waitingPlanes());
-            }
+            } else if (action.equals("g")) {
+                System.out.println(simulator.log());
             } else if (action.equals("q")) {
                 done = true;
             }
         }
-}}
+    }
+}

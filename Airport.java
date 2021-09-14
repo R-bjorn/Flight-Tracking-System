@@ -65,4 +65,22 @@ public class Airport {
         }
         return "No plane is in the landing and take-off queues.";
     }
+
+    // Printing log
+    public String log() {
+        if (takenOff.size() > 0 || landed.size() > 0) {
+            System.out.println("List of the landing/take-off activities");
+            System.out.println("---------------------------------------");
+            StringBuilder result = new StringBuilder();
+            for (String flight : landed) {
+                result.append("Flight ").append(flight).append(" landed.\n");
+            }
+            for (String flight : takenOff) {
+                result.append("Flight ").append(flight).append(" taken-off.\n");
+            }
+
+            return result.toString();
+        }
+        return "No activities exists.";
+    }
 }
