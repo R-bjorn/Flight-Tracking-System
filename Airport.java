@@ -17,6 +17,12 @@ public class Airport {
     public Queue<String> takenOff;
     public Queue<String> landed;
 
+	public Airport(){
+		takeOff = new LinkedList<>();
+		landing = new LinkedList<>();
+		takenOff = new LinkedList<>();
+		landed = new LinkedList<>();
+	}
     // For adding the flights that are going to take off soon
     public void addTakeOff(String flight_number) {
         takeOff.add(flight_number);
@@ -45,24 +51,33 @@ public class Airport {
     // For print the planes waiting for landing/take-off.
     public String waitingPlanes() {
         StringBuilder waitingPlanes = new StringBuilder();
+		boolean waiting = false;
         if (landing.size() > 0) {
             waitingPlanes.append("Planes waiting for landing\n");
             waitingPlanes.append("---------------------------\n");
-            for (String flight : landed) {
+            for (String flight : landing) {
+				waitingPlanes.append(" - ");
                 waitingPlanes.append(flight);
+				waitingPlanes.append("\n");
             }
-            waitingPlanes.append("\n");
-            return waitingPlanes.toString();
+            waitingPlanes.append("\n\n");
+			waiting = true;
+            //return waitingPlanes.toString();
         }
         if (takeOff.size() > 0) {
             waitingPlanes.append("Planes waiting for take-off\n");
             waitingPlanes.append("---------------------------\n");
             for (String flight : takeOff) {
+				waitingPlanes.append(" - ");
                 waitingPlanes.append(flight);
+				waitingPlanes.append("\n");
             }
             waitingPlanes.append("\n");
-            return waitingPlanes.toString();
+			waiting = true;
+            //return waitingPlanes.toString();
         }
+		if(waiting)
+			return waitingPlanes.toString();
         return "No plane is in the landing and take-off queues.";
     }
 
