@@ -2,7 +2,7 @@
 
 # Flight-Tracking-System
 
-Flight Tracking System (**FTS**) is a software system which obtain and process flight data in real-time on the ground while the flight is still in progress. *FTS* keeps track of all the flights landing/taking off from an airport. 
+> Flight Tracking System (**FTS**) is a software system which obtain and process flight data in real-time on the ground while the flight is still in progress. *FTS* keeps track of all the flights landing/taking off from an airport. 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
